@@ -1,4 +1,4 @@
 # My-repo
-This is my first Repository 
-index.html
-My first website 
+This is my first repository.
+
+Open Index.html in a browser to view the page.

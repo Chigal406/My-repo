@@ -1,4 +1,4 @@
-<!DOCTYDOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -269,7 +269,7 @@
         </div>
 
         <div class="grid-3">
-          <article class="car">
+          <article class="card">
             <span class="tag">AI • Beginner to Intermediate</span>
             <h3>Generative AI for Work</h3>
             <p>Learn how to use AI tools for automation, content creation, research, and productivity.</p>
@@ -354,4 +354,4 @@
       </section>
     </main>
   </body>
-</html
+</html>

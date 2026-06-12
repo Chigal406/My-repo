@@ -1,1 +1,357 @@
-<html>HelloGoodwall<hl>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upskill Courses & Earning Potential</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --panel: #0f172a;
+        --panel-2: #111827;
+        --text: #e5eefb;
+        --muted: #bfcced;
+        --accent: #38bdf8;
+        --accent-2: #a78bfa;
+        --good: #22c55e;
+        --border: rgba(148, 163, 184, 0.18);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 25%),
+          linear-gradient(135deg, var(--bg), #020617 60%);
+        min-height: 100vh;
+      }
+
+      .page {
+        width: min(1200px, calc(100% - 24px));
+        margin: 0 auto;
+        padding: 24px 0 40px;
+      }
+
+      .hero, .card, .mini-card {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(8, 15, 28, 0.98));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+        padding: 28px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: #bae6fd;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.4rem);
+        line-height: 1.08;
+        margin: 0 0 12px;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 1.04rem;
+        margin-bottom: 16px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 8px;
+      }
+
+      .pill {
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        color: #d7f3ff;
+        background: rgba(14, 165, 233, 0.08);
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.92rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 12px;
+        padding: 10px 14px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), #2563eb);
+        color: #fff;
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        border: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.9);
+      }
+
+      .stat-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mini-card {
+        padding: 14px;
+      }
+
+      .mini-card strong {
+        display: block;
+        font-size: 1.3rem;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      section {
+        margin-top: 22px;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: 1.35rem;
+      }
+
+      .section-head p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .grid-2, .grid-3 {
+        display: grid;
+        gap: 14px;
+      }
+
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+      .card {
+        padding: 16px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        background: rgba(167, 139, 250, 0.12);
+        color: #ddd6fe;
+        font-size: 0.82rem;
+        padding: 6px 10px;
+        margin-bottom: 8px;
+      }
+
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 1.02rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.45;
+        margin: 0 0 10px;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        color: #dbeafe;
+        font-size: 0.92rem;
+      }
+
+      .salary {
+        color: #bbf7d0;
+        font-weight: 700;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.09), rgba(56, 189, 248, 0.08));
+        border: 1px solid rgba(34, 197, 94, 0.18);
+        border-radius: 18px;
+        padding: 14px;
+      }
+
+      .highlight-box h3 { margin-top: 0; }
+
+      @media (max-width: 980px) {
+        .hero { grid-template-columns: 1fr; }
+        .grid-3 { grid-template-columns: 1fr 1fr; }
+      }
+
+      @media (max-width: 700px) {
+        .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        .page { width: min(100% - 16px, 1200px); padding-top: 12px; }
+        .hero, .card, .mini-card { border-radius: 18px; }
+        .section-head { align-items: start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <article>
+          <div class="eyebrow">Career Growth</div>
+          <h1>Upskill smarter to unlock higher earning potential.</h1>
+          <p class="lead">Choose the right courses, build in-demand skills, and position yourself for stronger salaries in AI, data, cloud, and digital roles.</p>
+          <div class="pill-row">
+            <span class="pill">AI & Automation</span>
+            <span class="pill">Data Analytics</span>
+            <span class="pill">Cloud & DevOps</span>
+            <span class="pill">Cybersecurity</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#courses">Explore Courses</a>
+            <a class="btn btn-secondary" href="#earnings">See Salary Impact</a>
+          </div>
+        </article>
+
+        <aside class="stat-grid">
+          <article class="mini-card">
+            <strong>+35%</strong>
+            Average salary growth after targeted upskilling
+          </article>
+          <article class="mini-card">
+            <strong>6 in 10</strong>
+            Employers prefer candidates with practical digital skills
+          </article>
+          <article class="mini-card">
+            <strong>3–6 months</strong>
+            Typical time to gain employable project-ready skills
+          </article>
+        </aside>
+      </section>
+
+      <section id="courses">
+        <div class="section-head">
+          <div>
+            <h2>Popular upskill courses</h2>
+            <p>Short, focused learning tracks that build real job-ready value.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">AI • Beginner to Intermediate</span>
+            <h3>Generative AI for Work</h3>
+            <p>Learn how to use AI tools for automation, content creation, research, and productivity.</p>
+            <div class="meta"><span>Duration: 4 weeks</span><span class="salary">ROI: High</span></div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Data • Practical</span>
+            <h3>Data Analytics Essentials</h3>
+            <p>Master spreadsheets, dashboards, and data storytelling to support decisions across teams.</p>
+            <div class="meta"><span>Duration: 6 weeks</span><span class="salary">ROI: Very High</span></div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Cloud • Career Growth</span>
+            <h3>Cloud Fundamentals</h3>
+            <p>Build a strong base in cloud platforms, deployment, and modern infrastructure concepts.</p>
+            <div class="meta"><span>Duration: 5 weeks</span><span class="salary">ROI: High</span></div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Cyber • Security Focus</span>
+            <h3>Cybersecurity Awareness</h3>
+            <p>Understand threats, secure workflows, and protect systems in a fast-changing digital world.</p>
+            <div class="meta"><span>Duration: 4 weeks</span><span class="salary">ROI: High</span></div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Digital • Marketing</span>
+            <h3>Digital Marketing & Analytics</h3>
+            <p>Learn campaign strategy, paid media, SEO basics, and conversion metrics to drive growth.</p>
+            <div class="meta"><span>Duration: 5 weeks</span><span class="salary">ROI: Strong</span></div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Product • Business</span>
+            <h3>Project & Product Skills</h3>
+            <p>Improve planning, communication, and execution skills that help you stand out in tech and business roles.</p>
+            <div class="meta"><span>Duration: 3 weeks</span><span class="salary">ROI: Strong</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="earnings">
+        <div class="section-head">
+          <div>
+            <h2>Earning potential by skill area</h2>
+            <p>These areas often unlock stronger compensation as employers compete for modern capabilities.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>AI & Automation</h3>
+            <p>Skills in automation, prompt engineering, and AI workflows are increasingly valuable across operations, marketing, and software teams.</p>
+            <p class="salary">Typical pay boost: +10% to +25% depending on role and experience.</p>
+          </article>
+
+          <article class="card">
+            <h3>Data Analytics</h3>
+            <p>Analytical and reporting skills help professionals move into higher-responsibility roles with better pay bands.</p>
+            <p class="salary">Typical pay boost: +12% to +30% for data-driven roles.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cloud & DevOps</h3>
+            <p>Cloud literacy and automation skills open doors to infrastructure, platform, and engineering positions with strong salary growth.</p>
+            <p class="salary">Typical pay boost: +15% to +35% in technical teams.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cybersecurity</h3>
+            <p>Security knowledge is critical for business resilience and often commands premium compensation in many organizations.</p>
+            <p class="salary">Typical pay boost: +18% to +40% in risk and operations roles.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="highlight-box">
+        <h3>Why this matters</h3>
+        <p>Upskilling is not just about learning new tools — it is about proving value, increasing your marketability, and building a stronger career path with better earnings over time.</p>
+      </section>
+    </main>
+  </body>
+</html>
